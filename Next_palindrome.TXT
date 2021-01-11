@@ -1,0 +1,28 @@
+#include<stdio.h>
+int next_palindrome(int n)
+{
+	int sum=0,i,temp=n;
+	while(n>0)
+	{
+		i=n%10;
+		sum=(sum*10)+i;
+		n=n/10;
+	}
+	if(sum==temp)
+	{
+		printf("%d is next palindrome of given number\n",temp);
+		return 1;
+	}
+return 0;
+}
+int main()
+{
+	int n;
+	printf("Enter a number to find next palindrome:");
+	scanf("%d",&n);
+	while(next_palindrome(n)!=1)
+	{
+		n++;
+	}
+return 0;
+}
